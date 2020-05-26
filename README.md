@@ -15,7 +15,7 @@
 - [NodeJS](https://nodejs.org/)
 
 ### Run the application in localhost
-> Change the .env file variables
+> Create the .env file variables: BD_NAME, BD_USER, BD_PASS, BD_HOST, BD_PORT, HOST
 ```
   npm install
   npm run dev

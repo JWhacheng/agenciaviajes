@@ -3,9 +3,10 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
-
 const configs = require('./config');
 const db = require('./config/database');
+
+require('dotenv').config({ path: '.env' });
 
 db.authenticate()
   .then(() => console.log('DB conectada'))
@@ -44,4 +45,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Cargar las rutas
 app.use('/', routes());
 
-app.listen(5000);
+/** Puerto y host para la app */
+const host =  process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 5000;
+
+app.listen(port, host, () => {
+  console.log('El servidor esta funcionando');
+});

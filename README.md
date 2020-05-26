@@ -14,8 +14,10 @@
 - [Sequalize](https://sequelize.org/)
 - [NodeJS](https://nodejs.org/)
 
-### Run the application
+### Run the application in localhost
+> Change the .env file variables
 ```
-  npm start
+  npm install
+  npm run dev
 ```
 
